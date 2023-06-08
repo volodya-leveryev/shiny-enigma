@@ -24,3 +24,20 @@ class EducationPlan(Model):
 
     def __str__(self):
         return f"{self.code} {self.name}"
+
+
+class SubjectPlan(Model):
+    """Рабочая программа дисциплины"""
+
+    plan = ForeignKey("EducationPlan", verbose_name="учебный план",
+                      on_delete=CASCADE)
+    code = CharField("код", max_length=10)
+    name = CharField("название", max_length=50)
+    file = FileField("файл")
+
+    class Meta:
+        verbose_name = "рабочая программа дисциплины"
+        verbose_name_plural = "рабочие программы дисциплин"
+
+    def __str__(self):
+        return f"{self.code} {self.name}"

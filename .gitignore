@@ -1,8 +1,12 @@
-# Байткод Python
-*.pyc
+# IDE
+.vscode/
 
 # Виртуальное окружение
-venv/
+/venv/
+
+# Байт-код
+*.pyc
 
 # База данных в формате Sqlite3
+migrations/
 *.sqlite3
