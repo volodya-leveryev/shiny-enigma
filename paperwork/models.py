@@ -1,5 +1,7 @@
 """Базовые модели данных"""
-from django.db.models import Model, CharField, FileField
+from django.db.models import (
+    Model, CharField, FileField, ForeignKey, CASCADE, IntegerField
+)
 
 
 QUALIFICATIONS = (
@@ -16,6 +18,7 @@ class EducationPlan(Model):
     name = CharField("название", max_length=50)
     qualification = CharField("квалификация", max_length=1,
                               choices=QUALIFICATIONS)
+    year = IntegerField("год поступления")
     file = FileField("файл")
 
     class Meta:
